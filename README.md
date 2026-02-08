@@ -53,6 +53,27 @@ To learn more, configure the Storybook plugin according to [the official guide](
 /usr/libexec/PlistBuddy -c "Print CFBundleVersion" /tmp/xcarchive_check/Volumes/*/workflow_data/*/AC_OUTPUT_DIR/build.xcarchive/Products/Applications/withstory.app/Info.plist
 ```
 
-### for apk file if needed.
+## Apk file if needed.
 
 - npx expo prebuild --platform android --clean
+
+###  1. Generate Android project
+- npx expo prebuild --platform android --clean
+
+### 2. Run the version script
+bash scripts/update_version.sh
+ 
+### 3. Build debug APK
+cd android && ./gradlew assembleDebug
+
+## option b for apk
+
+### Install EAS CLI
+npm install -g eas-cli
+
+### Login to Expo
+eas login
+
+### Build APK (no local SDK needed, builds in cloud)
+
+eas build --platform android --profile preview
