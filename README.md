@@ -28,3 +28,31 @@ This method runs your Expo components in a Storybook-React environment. This is 
   - The example should open to `http://localhost:6006/`
 
 To learn more, configure the Storybook plugin according to [the official guide](https://github.com/storybookjs/addon-react-native-web/).
+
+
+## Build version check from artifact in AppCircle
+
+
+### 1. Unzip the archive
+
+```unzip build.xcarchive.zip -d /tmp/xcarchive_check```
+
+
+### 2. Find the app's Info.plist
+
+```find /tmp/xcarchive_check -name "Info.plist" -path "*.app/Info.plist"```
+
+
+### 3. Read the version values
+
+```
+/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" /tmp/xcarchive_check/Volumes/*/workflow_data/*/AC_OUTPUT_DIR/build.xcarchive/Products/Applications/withstory.app/Info.plist
+
+# then this
+
+/usr/libexec/PlistBuddy -c "Print CFBundleVersion" /tmp/xcarchive_check/Volumes/*/workflow_data/*/AC_OUTPUT_DIR/build.xcarchive/Products/Applications/withstory.app/Info.plist
+```
+
+### for apk file if needed.
+
+- npx expo prebuild --platform android --clean
