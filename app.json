@@ -1,4 +1,19 @@
 {
-  "name": "with-story",
-  "slug": "with-story"
+  "expo": {
+    "name": "with-story",
+    "slug": "with-story",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.coderdew35.withstory",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.coderdew35.withstory",
+      "versionCode": 1
+    }
+  }
 }

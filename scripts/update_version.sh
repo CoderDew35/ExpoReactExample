@@ -25,10 +25,10 @@ BUILD_VERSION="${BUILD_VERSION:-$(date -u +"%Y.%m.%d-%H%M")}"
 BUILD_CODE="${BUILD_CODE:-$(date -u +"%Y%m%d%H%M")}"
 
 # ─── Logging helpers ────────────────────────────────────────────────────────
-info()    { echo "ℹ️  [VERSION] $*"; }
-success() { echo "✅ [VERSION] $*"; }
-warn()    { echo "⚠️  [VERSION] $*"; }
-error()   { echo "❌ [VERSION] $*" >&2; }
+info()    { echo " [VERSION] $*"; }
+success() { echo "[VERSION] $*"; }
+warn()    { echo " [VERSION] $*"; }
+error()   { echo "[VERSION] $*" >&2; }
 
 # ─── Resolve project root ──────────────────────────────────────────────────
 # In Appcircle the workspace is $AC_REPOSITORY_DIR; fall back to script dir.
